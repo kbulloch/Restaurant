@@ -32,7 +32,7 @@
 
         function setPhone($new_phone)
         {
-            $this->phone = (int) $new_phone;
+            $this->phone = (string) $new_phone;
         }
 
         function getCuisineId()

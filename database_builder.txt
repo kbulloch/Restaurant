@@ -1,0 +1,6 @@
+CREATE DATABASE best_rest;
+\c best_rest;
+CREATE TABLE restaurants (id serial PRIMARY KEY, name varchar, phone varchar, cuisine_id int);
+CREATE TABLE cuisines (id serial PRIMARY KEY, name varchar);
+CREATE DATABASE test_best_rest WITH TEMPLATE best_rest;
+\c test_best_rest;
