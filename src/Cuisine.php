@@ -32,7 +32,7 @@
 
         function save()
         {
-            $banana = $GLOBALS['DB']->query("INSERT INTO cuisines (name) VALUE ('{$this->getName()}') RETURNING id;");
+            $banana = $GLOBALS['DB']->query("INSERT INTO cuisines (name) VALUES ('{$this->getName()}') RETURNING id;");
             $result = $banana->fetch(PDO::FETCH_ASSOC);
             $this->setId($result['id']);
         }
@@ -83,7 +83,7 @@
         function getRestaurants()
         {
             $restaurants = array();
-            $returned_restaurants = $GLOBALS['DB']->query("SELECT * FROM restaurants WHERE cuisine_id = {$this->getId()} ORDER BY due_date;");
+            $returned_restaurants = $GLOBALS['DB']->query("SELECT * FROM restaurants WHERE cuisine_id = {$this->getId()};");
             foreach($returned_restaurants as $resty) {
                 $name = $resty['name'];
                 $phone = $resty['phone'];

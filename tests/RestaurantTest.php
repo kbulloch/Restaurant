@@ -27,7 +27,7 @@
             $test_cuisine->save();
 
             $restaurant_name = "Fiorentinos";
-            $phone = "971-666-0666";
+            $phone = "9716660666";
             $cuisine_id = $test_cuisine->getId();
             $test_restaurant = new Restaurant($restaurant_name, $phone, $cuisine_id, $id);
             $test_restaurant->save();
@@ -45,11 +45,11 @@
             //Arrange
             $name = "Italian";
             $id = null;
-            $test_  = new Cuisine($name, $id);
+            $test_cuisine = new Cuisine($name, $id);
             $test_cuisine->save();
 
             $restaurant_name = "Fiorentinos";
-            $phone = "971-666-0666";
+            $phone = "9716660666";
             $cuisine_id = $test_cuisine->getId();
             $test_restaurant = new Restaurant($restaurant_name, $phone, $cuisine_id, $id);
             $test_restaurant->save();
@@ -70,7 +70,7 @@
             $test_cuisine->save();
 
             $restaurant_name = "Fiorentinos";
-            $phone = "971-666-0666";
+            $phone = "9716660666";
             $cuisine_id = $test_cuisine->getId();
             $test_restaurant = new Restaurant($restaurant_name, $phone, $cuisine_id, $id);
             $test_restaurant->save();
@@ -91,7 +91,7 @@
             $test_cuisine->save();
 
             $restaurant_name = "Fiorentinos";
-            $phone = "971-666-0666";
+            $phone = "9716660666";
             $cuisine_id = $test_cuisine->getId();
             $test_restaurant = new Restaurant($restaurant_name, $phone, $cuisine_id, $id);
 
@@ -112,14 +112,14 @@
             $test_cuisine->save();
 
             $restaurant_name = "Fiorentinos";
-            $phone = "971-666-0666";
+            $phone = "9716660666";
             $cuisine_id = $test_cuisine->getId();
             $test_restaurant = new Restaurant($restaurant_name, $phone, $cuisine_id, $id);
             $test_restaurant->save();
 
 
             $restaurant_name2 = "Digiorno";
-            $phone2 = "565-000-8008"
+            $phone2 = "5650008008";
             $test_restaurant2 = new Restaurant($restaurant_name2, $phone2, $cuisine_id, $id);
             $test_restaurant2->save();
 
@@ -139,13 +139,13 @@
             $test_cuisine->save();
 
             $restaurant_name = "Fiorentinos";
-            $phone = "971-666-0666";
+            $phone = "9716660666";
             $cuisine_id = $test_cuisine->getId();
             $test_restaurant = new Restaurant($restaurant_name, $phone, $cuisine_id, $id);
             $test_restaurant->save();
 
             $restaurant_name2 = "Digiorno";
-            $phone2 = "565-000-8008"
+            $phone2 = "5650008008";
             $test_restaurant2 = new Restaurant($restaurant_name2, $phone2, $cuisine_id, $id);
             $test_restaurant2->save();
 
@@ -167,13 +167,13 @@
             $test_cuisine->save();
 
             $restaurant_name = "Fiorentinos";
-            $phone = "971-666-0666";
+            $phone = "9716660666";
             $cuisine_id = $test_cuisine->getId();
             $test_restaurant = new Restaurant($restaurant_name, $phone, $cuisine_id, $id);
             $test_restaurant->save();
 
             $restaurant_name2 = "Digiorno";
-            $phone2 = "565-000-8008"
+            $phone2 = "5650008008";
             $test_restaurant2 = new Restaurant($restaurant_name2, $phone2, $cuisine_id, $id);
             $test_restaurant2->save();
 
