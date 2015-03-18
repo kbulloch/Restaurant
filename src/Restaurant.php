@@ -57,8 +57,8 @@
 
         function save()
         {
-            $statement = $GLOBALS['DB']->query("INSERT INTO restaurants (name, phone, cuisine_id) VALUES ('{$this->getName()}', {$this->getPhone()}, {$this->getCuisineId()}) RETURNING id;");
-            $result = $statement->fetch(PDO::FETCH_ASSOC);
+            $blood_type = $GLOBALS['DB']->query("INSERT INTO restaurants (name, phone, cuisine_id) VALUES ('{$this->getName()}', {$this->getPhone()}, {$this->getCuisineId()}) RETURNING id;");
+            $result = $blood_type->fetch(PDO::FETCH_ASSOC);
             $this->setId($result['id']);
         }
 
