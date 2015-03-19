@@ -18,6 +18,27 @@
             Restaurant::deleteAll();
         }
 
+        function test_getCuisine()
+        {
+            //Arrange
+            $name = "BBQ";
+            $id = null;
+            $test_cuisine = new Cuisine($name, $id);
+            $test_cuisine->save();
+
+            $restaurant_name = "Twiggys BBQ";
+            $phone = "8088088080";
+            $cuisine_id = $test_cuisine->getId();
+            $test_restaurant = new Restaurant($restaurant_name, $phone, $cuisine_id, $id);
+            $test_restaurant->save();
+
+            //Act
+            $result = $test_restaurant->getCuisine();
+
+            //Assert
+            $this->assertEquals("BBQ", $result);
+        }
+
         function test_setId()
         {
             //Arrange

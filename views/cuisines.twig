@@ -1,0 +1,38 @@
+<html>
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <title>Cuisines</title>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ cuisine.getName }}</h1>
+
+        {% if restaurants is not empty %}
+            <p>These places got that:</p>
+            <ul>
+                {% for restaurant in restaurants %}
+                    <li>{{ restaurant.getName }}({{ restaurant.getPhone }})</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <h4>Add a restaurant</h4>
+
+
+        <form action="/relevant_restaurants" method="post">
+
+            <input id="cuisine_id" name="cuisine_id" type="hidden" value="{{ cuisine.getId() }}">
+
+            <label for='name'>Restaurant Name</label>
+            <input id='name' name='name' type='text'>
+
+            <label for='phone'>Phone Number</label>
+            <input id='phone' name='phone' type='text'>
+
+            <button type="submit" class="btn btn-info">Add Restaurant</button>
+        </form>
+
+        <p><a href="/">Home</a></p>
+    </div>
+</body>
+</html>

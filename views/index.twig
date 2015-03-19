@@ -9,10 +9,10 @@
 
         <form action="/cuisines" method="post">
             <div class="form-group">
-                <label for="new_cuisine">Enter a newly decapitated orphan</label>
+                <label for="new_cuisine">Enter a new cuisine</label>
                 <input type="text" name="new_cuisine" id="new_cuisine" class="form-control">
             </div>
-            <button type="submit" class="btn btn-warning">INCINERATE</button>
+            <button type="submit" class="btn btn-warning">Add Cuisine</button>
         </form>
 
         {% if cuisines is not empty %}
@@ -23,12 +23,13 @@
                 {% endfor %}
             </ul>
             <form action="/delete_cuisines" method="post">
-                <button type="submit" class="btn btn-danger">Clear All</button>
+                <button type="submit" class="btn btn-danger">INCINERATE</button>
             </form>
+            <p><a href="/show_all_restaurants">View all restaurants</a></p>
         {% else %}
             <p> Theres totes nothing to eat in this town.</p>
         {% endif %}
-        <p><a href="/show_all_restaurants">View all restaurants</a></p>
+
     </div>
 </body>
 </html>

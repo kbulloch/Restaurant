@@ -1,0 +1,17 @@
+<html>
+<head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <title>All Restaurants in The Cosmos</title>
+</head>
+<body>
+    <div class="container">
+        <!-- list restys with CUISINE TYPE!!! -->
+        <h1>Here's every freakin restaurant i know of</h1>
+        {% for resty in restaurants %}
+            <ul>
+                <li>{{ resty.getName }} ({{ resty.getPhone }}) {{ resty.getCuisineId }}</li>
+            </ul>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -55,6 +55,18 @@
             $this->id = (int) $new_id;
         }
 
+        function getCuisine()
+        {
+            //talk to DB grab cuisine name using the cuisine id
+            //must talk to cuisine table
+            //cuisineId in the RESTARURANTS table = id in CUISINES table
+            //select from cuisines where id = cuisineId
+            $statement = $GLOBALS['DB']->query("SELECT name FROM cuisines WHERE id = {$this->getCuisineId()};");
+            $result = $statement->fetch(PDO::FETCH_ASSOC);
+            // var_dump($statement);
+            return $result['name'];
+        }
+
         function save()
         {
             $blood_type = $GLOBALS['DB']->query("INSERT INTO restaurants (name, phone, cuisine_id) VALUES ('{$this->getName()}', {$this->getPhone()}, {$this->getCuisineId()}) RETURNING id;");
