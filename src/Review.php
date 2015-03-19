@@ -4,22 +4,22 @@
     {
         private $user;
         private $stars;
-        private $text;
+        private $body;
         private $rest_id;
         private $id;
 
-        function __construct($user, $stars, $text, $rest_id, $id = null)
+        function __construct($user, $stars, $body, $rest_id, $id = null)
         {
             $this->user = $user;
             $this->stars = $stars;
-            $this->text = $text;
+            $this->body = $body;
             $this->rest_id = $rest_id;
             $this->id = $id;
         }
 
-        function setUser()
+        function setUser($new_user)
         {
-            $this->user = (string) $user;
+            $this->user = (string) $new_user;
         }
 
         function getUser()
@@ -29,44 +29,46 @@
 
         function setStars()
         {
-            $this->stars = (string) $stars;//string or int or whaaa?
+            $this->stars = (int) $stars;//string or int or whaaa?
         }
-
         function getStars()
         {
             return $this->stars;
         }
 
-        function setText()
+        function setBody($new_body)
         {
-            $this->text = (string) $text;
+            $this->body = (string) $new_body;
+        }
+        function getBody()
+        {
+            return $this->body;
         }
 
-        function getText()
+        function setRestId($new_rest_id)
         {
-            return $this->text;
+            $this->rest_id = (int) $new_rest_id;
         }
-
-        function setRestId()
-        {
-            $this->rest_id = (int) $rest_id;
-        }
-
         function getRestId()
         {
             return $this->rest_id;
         }
-        function setId()
-        {
-            $this->id = (int) $id;
-        }
 
+        function setId($new_id)
+        {
+            $this->id = (int) $new_id;
+        }
         function getId()
         {
             return $this->id;
         }
 
-        
+        function save()
+        {
+            $statement = $GLOBALS['DB']->query("INSERT INTO reviews (user, stars, body, rest_id) VALUES ('{$this->getUser()}', {$this->getStars()}, '{$this->getBody}', {$this->getRestId()});");
+            $result = $statement->fetch(PDO::FETCH_ASSOC);
+            $this->setId($result['id']);
+        }
 
 
 
