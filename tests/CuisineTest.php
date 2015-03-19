@@ -51,9 +51,11 @@
 
             //Act
             $test_cuisine->delete();
+            $result = Restaurant::getAll();
 
             //Assert
-            $this->assertEquals([], Restaurant::getAll());
+
+            $this->assertEquals([], $result);
         }
 
         function test_getName()

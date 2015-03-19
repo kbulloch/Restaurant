@@ -41,6 +41,7 @@
         {
             $GLOBALS['DB']->exec("DELETE FROM cuisines WHERE id = {$this->getId()};");
             $GLOBALS['DB']->exec("DELETE FROM restaurants WHERE cuisine_id = {$this->getId()};");
+            $GLOBALS['DB']->exec("DELETE FROM reviews WHERE cuisine_id = {$this->getId()};");
         }
 
         static function getAll()
