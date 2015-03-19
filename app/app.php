@@ -31,6 +31,12 @@
         return $app['twig']->render('cuisines.twig', array('cuisine' => $cuisine, 'restaurants' => $cuisine->getRestaurants()));
     });
 
+    //individual restaurant pages
+    $app->get("/restaurants/{id}", function($id) use ($app) {
+        $restaurant = Restaurant::find($id);
+        return $app['twig']->render('restaurant.twig', array('restaurant' => $restaurant));
+    });
+
     $app->post("/relevant_restaurants", function() use ($app) {
         $name = $_POST['name'];
         $phone = $_POST['phone'];
@@ -43,7 +49,7 @@
 
     $app->get("/show_all_restaurants", function() use ($app) {
         $all_restaurants = Restaurant::getAll();
-        return $app['twig']->render('restaurants.twig', array('restaurants' => $all_restaurants));
+        return $app['twig']->render('all_restaurants.twig', array('restaurants' => $all_restaurants));
     });
     //
     // $app->post("/delete_restaurants", function() use ($app) {
