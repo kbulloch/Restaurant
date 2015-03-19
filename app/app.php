@@ -56,12 +56,12 @@
         $cuisine->save();
         return $app['twig']->render('index.twig', array('cuisines' => Cuisine::getAll()));
     });
-    //
-    // $app->post("/delete_cuisines", function() use ($app) {
-    //     Cuisine::deleteAll();
-    //     Restaurant::deleteAll();
-    //     return $app['twig']->render('index.twig', array('cuisines' => Cuisine::getAll()));
-    // });
+
+    $app->post("/delete_all", function() use ($app) {
+        Cuisine::deleteAll();
+        Restaurant::deleteAll();
+        return $app['twig']->render('index.twig', array('cuisines' => Cuisine::getAll()));
+    });
 
     return $app;
 ?>

@@ -22,7 +22,7 @@
                     <li><a href="/cuisines/{{ food.getId }}">{{ food.getName }}</a></li>
                 {% endfor %}
             </ul>
-            <form action="/delete_cuisines" method="post">
+            <form action="/delete_all" method="post">
                 <button type="submit" class="btn btn-danger">INCINERATE</button>
             </form>
             <p><a href="/show_all_restaurants">View all restaurants</a></p>
